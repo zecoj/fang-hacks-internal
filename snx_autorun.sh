@@ -18,7 +18,7 @@ else
 	continue
 fi
 
-if [ ! -e /etc/rtsp/OK ] ; then
+if [ ! -e /etc/rtsp/OK -o ${CHUCKNORRIS} -eq "true" ] ; then
 	kill -9 `pidof iCamera`
 	kill -9 `pidof test_UP`
 	kill -9 `pidof iSC3S`
@@ -37,6 +37,5 @@ if [ ! -e /etc/rtsp/OK ] ; then
 
 	touch /etc/rtsp/OK
 
-	sync && reboot
+	/etc/rtsp/my.rc.local &
 fi
-

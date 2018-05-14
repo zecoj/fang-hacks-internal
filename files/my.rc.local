@@ -1,12 +1,16 @@
 #!/bin/sh
 
+rmmod snx_wdt && rm -rf /etc/app/*
+
 source /etc/rtsp/config.txt
 
-/etc/rtsp/99-watchdog &
+kill -9 `pidof rtsp-watchdog`
+kill -9 `pidof wpa_supplicant`
+kill -9 `pidof udhcpc`
 
-/bin/sleep 30
+/etc/rtsp/rtsp-watchdog &
 
-rmmod snx_wdt && rm -rf /etc/app/*
+/etc/rtsp/ir-control &
 
 wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf &
 

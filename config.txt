@@ -14,5 +14,8 @@ NTPD="time.google.com"
 # http://svn.fonosfera.org/fon-ng/trunk/luci/modules/admin-fon/root/etc/timezones.db
 TZ="EST-10EST,M10.1.0,M4.1.0/3"
 
+# Chuck Norris mode -- Force initialise. Useful if XiaoFang doesn't seem to boot
+CHUCKNORRIS="false"
+
 # Don't touch this
-MD5SUM="500128de98881f8d881e9bebbfad9ee3"
+MD5SUM="e4c7419748cae1ee671e408446b6ee89"

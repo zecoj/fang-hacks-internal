@@ -1,14 +1,14 @@
 # Fang Hacks Internal
 Collection of modifications for the XiaoFang WiFi Camera using only internal flash
 
-The idea of this hack is to provide RTSP stream and basic telnet functionality without the need for a microsd card.
+The idea of this hack is to provide RTSP stream and basic telnet functionality without the need for a microsd card. This project uses RTSP server and IR controller from [fang-hacks](https://github.com/samtap/fang-hacks).
 
 ## DISCLAIMER
 While this has been tested fairly extensively, I shall hold no responsibility if this brick your camera or kill your cat.
 
 ## General usage
 
-Prepare a microsd card with 1 FAT partition. Copy ```config.txt```, ```files.tar```, ```snx_autorun.sh``` to the FAT partition. Make sure you check files.tar for corruption. md5sum should be ```500128de98881f8d881e9bebbfad9ee3```
+Prepare a microsd card with 1 FAT partition. Copy ```config.txt```, ```files.tar```, ```snx_autorun.sh``` to the FAT partition. Make sure you check files.tar for corruption.
 
 ## Migrate from fang-hacks 
 If you are already using samtap's fang-hacks. It is recommend that you wipe the internal flash before proceeding. This can be done by telnet to the device and issue the following command
