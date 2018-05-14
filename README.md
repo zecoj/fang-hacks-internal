@@ -20,7 +20,7 @@ Watch the status and as soon as the command return to the # prompt, remove the m
  - Edit config.txt
  - Make sure camera is up and running
  - Insert microsd card, installation process will start.
- - Check your WiFi router for new IP (or reserve DHCP prior). ping should replies in about 1 minute.
+ - Check your WiFi router for new IP (or reserve DHCP prior). ping should reply in about 1 minute.
  - You should now be able to telnet to port 2323 or rtsp://IP/unicast
  - Once confirmed working, remove the microsd and reboot the camera
  - Once installed, this intial setup will not be run again unless Chuck Norris mode is invoked -- see below.
