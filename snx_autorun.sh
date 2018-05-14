@@ -12,23 +12,30 @@ fi
 
 MYSUM=`md5sum /media/${MDEV}/files.tar|cut -d " " -f1`
 
-if [ "${MYSUM}" -ne "${MD5SUM}" ] ; then
+if [ "${MYSUM}" != "${MD5SUM}" ] ; then
 	return
 else
 	continue
 fi
 
-if [ ! -e /etc/rtsp/OK -o ${CHUCKNORRIS} -eq "true" ] ; then
+if [ ! -e /etc/rtsp/OK -o "${CHUCKNORRIS}" == "true" ] ; then
 	kill -9 `pidof iCamera`
 	kill -9 `pidof test_UP`
 	kill -9 `pidof iSC3S`
+	kill -9 `pidof rtsp-watchdog`
+	kill -9 `pidof ir-control`
+	kill -9 `pidof ntpd`
+	kill -9 `pidof wpa_supplicant`
+	kill -9 `pidof udhcpc`
+	kill -9 `pidof snx_rtsp_server`
 
-	rm -rf /etc/app/*
+	rm -rf /etc/app /etc/miio* /etc/rtsp
 
 	mkdir -p /etc/rtsp/
 	cd /etc/rtsp/
 	tar xf /media/${MDEV}/files.tar 
 	cp /media/${MDEV}/config.txt .
+	chown root:root /etc/rtsp/ -R
 
 	sed -i '/iSC3S/d' /etc/init.d/rcS
 

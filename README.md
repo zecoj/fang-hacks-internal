@@ -7,7 +7,6 @@ The idea of this hack is to provide RTSP stream and basic telnet functionality w
 While this has been tested fairly extensively, I shall hold no responsibility if this brick your camera or kill your cat.
 
 ## General usage
-
 Prepare a microsd card with 1 FAT partition. Copy ```config.txt```, ```files.tar```, ```snx_autorun.sh``` to the FAT partition. Make sure you check files.tar for corruption.
 
 ## Migrate from fang-hacks 
@@ -15,17 +14,24 @@ If you are already using samtap's fang-hacks. It is recommend that you wipe the 
 
 ```/usr/sbin/flash_eraseall -j -q /dev/mtd4 && reboot```
 
-This will take a few minutes to reboot and repopulate /etc partition. Camera will start flashing amber/blue LED once ready.
+Watch the status and as soon as the command return to the # prompt, remove the microsd. This will now take a few minutes to reboot and repopulate /etc partition. Camera will start flashing amber/blue LED once ready.
 
 ## Initial Setup
  - Edit config.txt
  - Make sure camera is up and running
- - Insert microsd card, Xiaofang will reboot upon completion
+ - Insert microsd card, installation process will start.
  - Check your WiFi router for new IP (or reserve DHCP prior). ping should replies in about 1 minute.
  - You should now be able to telnet to port 2323 or rtsp://IP/unicast
+ - Once confirmed working, remove the microsd and reboot the camera
+ - Once installed, this intial setup will not be run again unless Chuck Norris mode is invoked -- see below.
 
 ## Updating SSID/PSK/etc.
  - Make change(s) in config.txt
  - Insert microsd card
  - Wait 10 seconds, eject the card
- - Reboot Xiaofang
+ - Reboot XiaoFang
+
+## Chuck Norris Mode
+ - This mode will force the "Initial Setup" process described above, regardless of existing installation.
+ - In config.txt, change CHUCKNORRIS to "true"
+ - Make sure the camera is up and running then insert the card.
