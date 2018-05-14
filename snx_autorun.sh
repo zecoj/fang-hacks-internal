@@ -8,9 +8,6 @@ if [ -e /media/${MDEV}/config.txt ] ; then
 	sed -i -e 's/ssid=".*"$/ssid="'${SSID}'"/g' /etc/wpa_supplicant.conf
 	sed -i -e 's/psk=".*"$/psk="'${PSK}'"/g' /etc/wpa_supplicant.conf
 	echo ${TZ} > /etc/TZ
-	if [ -e /etc/rtsp/OK ] ; then
-		reboot
-	fi
 fi
 
 MYSUM=`md5sum /media/${MDEV}/files.tar|cut -d " " -f1`
