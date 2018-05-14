@@ -1,0 +1,15 @@
+# Desired hostname for the XiaoFang
+HOSTNAME="xf00"
+
+# SSID of your WiFi network
+SSID="YOURSSID"
+
+# PSK of your WiFI network
+PSK="YOURPSK"
+
+# Hostname/IP of NTP server, can be internal or external
+NTPD="time.google.com"
+
+# Your current timezone. Complete list:
+# http://svn.fonosfera.org/fon-ng/trunk/luci/modules/admin-fon/root/etc/timezones.db
+TZ="EST-10EST,M10.1.0,M4.1.0/3"

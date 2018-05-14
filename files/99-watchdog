@@ -1,0 +1,9 @@
+#!/bin/sh
+
+while true; do
+	if pidof snx_rtsp_server >/dev/null; then
+		continue
+	else
+		LD_LIBRARY_PATH=/etc/rtsp /etc/rtsp/snx_rtsp_server -W 1920 -H 1080 -Q 10 -b 4096 -a >/dev/null &
+	fi
+done;

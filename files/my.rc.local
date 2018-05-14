@@ -1,0 +1,19 @@
+#!/bin/sh
+
+source /etc/rtsp/config.txt
+
+/etc/rtsp/99-watchdog &
+
+/bin/sleep 30
+
+rmmod snx_wdt && rm -rf /etc/app/*
+
+wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf &
+
+udhcpc -i wlan0 -p /var/run/udhcpc.pid -b &
+
+/usr/sbin/telnetd -p 2323 &
+
+/bin/sleep 30
+
+/usr/sbin/ntpd -p ${NTPD}
