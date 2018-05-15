@@ -1,7 +1,14 @@
 # Fang Hacks Internal
 Collection of modifications for the XiaoFang WiFi Camera using only internal flash
 
-The idea of this hack is to provide RTSP stream and basic telnet functionality without the need for a microsd card. This project uses RTSP server and IR controller from [fang-hacks](https://github.com/samtap/fang-hacks).
+The aim of this hack is to provide RTSP stream and basic telnet functionality without the need for a microsd card. This project uses RTSP server and IR controller from [fang-hacks](https://github.com/samtap/fang-hacks).
+
+## Features
+ - RTSP stream at ```rtsp://IP/unicast```
+ - Telnet on port 23 (```root:ismart12```)
+ - RTSP stream [OSD manipulation](https://github.com/samtap/fang-hacks/wiki/Controlling-the-text-overlay).
+ - A script controls the IR filter
+ - Config update via text file on microsd card
 
 ## DISCLAIMER
 While this has been tested fairly extensively, I shall hold no responsibility if this brick your camera or kill your cat.
