@@ -1,12 +1,8 @@
 #!/bin/sh
 
-rmmod snx_wdt && rm -rf /etc/app/*
+rmmod snx_wdt
 
 source /etc/rtsp/config.txt
-
-kill -9 `pidof rtsp-watchdog`
-kill -9 `pidof wpa_supplicant`
-kill -9 `pidof udhcpc`
 
 /etc/rtsp/rtsp-watchdog &
 

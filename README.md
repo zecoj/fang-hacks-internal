@@ -19,7 +19,7 @@ Watch the status and as soon as the command return to the # prompt, remove the m
 ## Initial Setup
  - Edit config.txt
  - Make sure camera is up and running
- - Insert microsd card, installation process will start.
+ - Insert microsd card, installation process will start. You will hear 4 quick beeps once and again when the files are transferred successfully to the internal flash.
  - Check your WiFi router for new IP (or reserve DHCP prior). ping should reply in about 1 minute.
  - You should now be able to telnet to port 2323 or rtsp://IP/unicast
  - Once confirmed working, remove the microsd and reboot the camera
@@ -27,8 +27,8 @@ Watch the status and as soon as the command return to the # prompt, remove the m
 
 ## Updating SSID/PSK/etc.
  - Make change(s) in config.txt
- - Insert microsd card
- - Wait 10 seconds, eject the card
+ - Insert microsd card. You will hear 2 quick clinks when the new setting is applied.
+ - Eject the card
  - Reboot XiaoFang
 
 ## Chuck Norris Mode
