@@ -4,6 +4,7 @@
 
 if [ -e /media/${MDEV}/config.txt ] ; then
 	source /media/${MDEV}/config.txt
+	hostname ${HOSTNAME}
 	echo ${HOSTNAME} > /etc/hostname
 	sed -i -e 's/ssid=".*"$/ssid="'${SSID}'"/g' /etc/wpa_supplicant.conf
 	sed -i -e 's/psk=".*"$/psk="'${PSK}'"/g' /etc/wpa_supplicant.conf
@@ -19,15 +20,7 @@ else
 fi
 
 if [ ! -e /etc/rtsp/OK -o "${CHUCKNORRIS}" == "true" ] ; then
-	kill -9 `pidof iCamera`
-	kill -9 `pidof test_UP`
-	kill -9 `pidof iSC3S`
-	kill -9 `pidof rtsp-watchdog`
-	kill -9 `pidof ir-control`
-	kill -9 `pidof ntpd`
-	kill -9 `pidof wpa_supplicant`
-	kill -9 `pidof udhcpc`
-	kill -9 `pidof snx_rtsp_server`
+	ps | grep -E "(etc|ntp|udhcpc|iCamera|test_UP|iSC3S|wpa_supplicant)" | grep -v grep | cut -d " " -f 2 | xargs kill -9
 
 	rm -rf /etc/app /etc/miio* /etc/rtsp
 

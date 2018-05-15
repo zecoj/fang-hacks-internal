@@ -17,5 +17,5 @@ TZ="EST-10EST,M10.1.0,M4.1.0/3"
 # Chuck Norris mode -- Force initialise. Useful if XiaoFang doesn't seem to boot
 CHUCKNORRIS="false"
 
-# Don't touch this
+# Don't touch this. Alright, you can if you want to -- checksum of files.tar.
 MD5SUM="e4c7419748cae1ee671e408446b6ee89"
