@@ -20,7 +20,7 @@ else
 fi
 
 if [ ! -e /etc/rtsp/OK -o "${CHUCKNORRIS}" == "true" ] ; then
-	ps | grep -E "(etc|ntp|udhcpc|iCamera|test_UP|iSC3S|wpa_supplicant)" | grep -v grep | cut -d " " -f 2 | xargs kill -9
+	ps | grep -E "(etc|ntp|udhcpc|iCamera|test_UP|iSC3S|wpa_supplicant)" | grep -v grep | sed 's/^\s*//' | cut -d " " -f 1 | xargs kill -9
 
 	rm -rf /etc/app /etc/miio* /etc/rtsp
 
