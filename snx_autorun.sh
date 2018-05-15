@@ -4,8 +4,12 @@
 
 gpio_aud write 1 4 1
 
-if [ -e /media/${MDEV}/config.txt ] ; then
-	source /media/${MDEV}/config.txt
+CFILE="/media/${MDEV}/config.txt"
+TFILE="/media/${MDEV}/files.tar"
+
+if [ -e ${CFILE} ] ; then
+	cp ${CFILE} /etc/rtsp/.
+	source ${CFILE}
 	hostname ${HOSTNAME}
 	echo ${HOSTNAME} > /etc/hostname
 	sed -i -e 's/ssid=".*"$/ssid="'${SSID}'"/g' /etc/wpa_supplicant.conf
@@ -19,7 +23,7 @@ fi
 
 if [ ! -e /etc/rtsp/OK -o "${CHUCKNORRIS}" == "true" ] ; then
 
-	MYSUM=`md5sum /media/${MDEV}/files.tar|cut -d " " -f1`
+	MYSUM=`md5sum ${TFILE}|cut -d " " -f1`
 
 	if [ "${MYSUM}" != "${MD5SUM}" ] ; then
 		return
@@ -35,8 +39,8 @@ if [ ! -e /etc/rtsp/OK -o "${CHUCKNORRIS}" == "true" ] ; then
 
 	mkdir -p /etc/rtsp/
 	cd /etc/rtsp/
-	tar xf /media/${MDEV}/files.tar 
-	cp /media/${MDEV}/config.txt .
+	tar xf ${TFILE}
+	cp ${CFILE} .
 	chown root:root /etc/rtsp/ -R
 
 	sed -i '/iSC3S/d' /etc/init.d/rcS

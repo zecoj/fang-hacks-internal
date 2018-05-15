@@ -8,6 +8,8 @@ source /etc/rtsp/config.txt
 
 /etc/rtsp/ir-control &
 
+/etc/rtsp/snx_isp_ctl ${SNXISPCTLARGS} &
+
 wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf &
 
 udhcpc -i wlan0 -p /var/run/udhcpc.pid -b &

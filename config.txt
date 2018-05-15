@@ -14,8 +14,12 @@ NTPD="time.google.com"
 # http://svn.fonosfera.org/fon-ng/trunk/luci/modules/admin-fon/root/etc/timezones.db
 TZ="EST-10EST,M10.1.0,M4.1.0/3"
 
+# Arguments to be passed to snx_isp_ctl for image manipulation. Complete list:
+# https://github.com/samtap/fang-hacks/wiki/Controlling-the-text-overlay
+SNXISPCTLARGS="--mfset-mode 0"
+
 # Chuck Norris mode -- Force initialise. Useful if XiaoFang doesn't seem to boot
 CHUCKNORRIS="false"
 
 # Don't touch this. Alright, you can if you want to -- checksum of files.tar.
-MD5SUM="7e931304da5ae9c5d49a08fccc20b215"
+MD5SUM="9a919932888fc8125661b12eee494807"
