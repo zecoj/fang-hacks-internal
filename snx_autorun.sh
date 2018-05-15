@@ -25,11 +25,11 @@ if [ ! -e /etc/rtsp/OK -o "${CHUCKNORRIS}" == "true" ] ; then
 		return
 	fi
 
+	ps | grep -E "(etc|ntp|udhcpc|iCamera|test_UP|iSC3S|wpa_supplicant)" | grep -v grep | sed 's/^\s*//' | cut -d " " -f 1 | xargs kill -9
+
 	tar xf /media/mmcblk0p1/files.tar -C /tmp/ pcm_play
 
 	/tmp/pcm_play /usr/share/notify/CN/speaker.wav
-
-	ps | grep -E "(etc|ntp|udhcpc|iCamera|test_UP|iSC3S|wpa_supplicant)" | grep -v grep | sed 's/^\s*//' | cut -d " " -f 1 | xargs kill -9
 
 	rm -rf /etc/app /etc/miio* /etc/rtsp
 
