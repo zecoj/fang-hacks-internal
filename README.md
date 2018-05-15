@@ -12,9 +12,9 @@ Prepare a microsd card with 1 FAT partition. Copy ```config.txt```, ```files.tar
 ## Migrate from fang-hacks 
 If you are already using samtap's fang-hacks. It is recommend that you wipe the internal flash before proceeding. This can be done by telnet to the device and issue the following command
 
-```/usr/sbin/flash_eraseall -j -q /dev/mtd4 && reboot```
+```/usr/sbin/flash_eraseall -j -q /dev/mtd4 && halt```
 
-Watch the status and as soon as the command return to the # prompt, remove the microsd. This will now take a few minutes to reboot and repopulate /etc partition. Camera will start flashing amber/blue LED once ready.
+Watch the status and as soon as the command return to the # prompt, remove the microsd, power-cycle the camera. This will now take a few minutes to reboot and repopulate /etc partition. Camera will start flashing amber/blue LED once ready.
 
 ## Initial Setup
  - Edit config.txt
