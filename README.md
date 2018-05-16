@@ -9,6 +9,7 @@ The aim of this hack is to provide RTSP stream and basic telnet functionality wi
  - RTSP stream [OSD manipulation](https://github.com/samtap/fang-hacks/wiki/Controlling-the-text-overlay).
  - A script controls the IR filter
  - Config update via text file on microsd card
+ - [not a bug] all Xiaomi cloud apps are removed rendering all original cloud functions broken. You can return to factory state by flash-erase the /dev/mtd4 partition: ```/usr/sbin/flash_eraseall -j -q /dev/mtd4```
 
 ## DISCLAIMER
 While this has been tested fairly extensively, I shall hold no responsibility if this brick your camera or kill your cat.
